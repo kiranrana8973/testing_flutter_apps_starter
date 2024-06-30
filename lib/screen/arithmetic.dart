@@ -22,14 +22,16 @@ class _MyAppState extends State<ArithemticScreen> {
     setState(() {
       result = arithmetic!.add();
     });
-    Navigator.pushNamed(context, '/arithmeticOutput', arguments: result);
+    // Navigate to another screen and pass the result as an argument
+    // Navigator.pushNamed(context, '/arithmeticOutput', arguments: result);
   }
 
   _subtractNumbers() {
     setState(() {
       result = first! - second!;
     });
-    Navigator.pushNamed(context, '/arithmeticOutput', arguments: result);
+    // Navigate to another screen and pass the result as an argument
+    // Navigator.pushNamed(context, '/arithmeticOutput', arguments: result);
   }
 
   final _firstController = TextEditingController();
