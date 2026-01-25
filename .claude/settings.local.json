@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter pub upgrade:*)",
+      "Bash(flutter pub outdated:*)",
+      "Bash(flutter clean:*)",
+      "Bash(flutter pub get:*)"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ArithmeticOutputScreen extends StatefulWidget {
-  const ArithmeticOutputScreen({Key? key}) : super(key: key);
+  const ArithmeticOutputScreen({super.key});
 
   @override
   State<ArithmeticOutputScreen> createState() => _ArithmeticOutputScreenState();

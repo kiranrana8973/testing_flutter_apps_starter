@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../model/arithmetic.dart';
 
 class ArithemticScreen extends StatefulWidget {
-  const ArithemticScreen({Key? key}) : super(key: key);
+  const ArithemticScreen({super.key});
 
   @override
   State<ArithemticScreen> createState() => _MyAppState();
