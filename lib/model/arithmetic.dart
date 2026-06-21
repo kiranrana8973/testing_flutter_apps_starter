@@ -4,19 +4,19 @@ class Arithmetic {
 
   Arithmetic({this.first, this.second});
 
-  int? add() {
+  int add() {
     return first! + second!;
   }
 
-  int? subtract() {
+  int subtract() {
     return first! - second!;
   }
 
-  int? multiply() {
+  int multiply() {
     return first! * second!;
   }
 
-  int? divide() {
+  int divide() {
     return first! ~/ second!;
   }
 }

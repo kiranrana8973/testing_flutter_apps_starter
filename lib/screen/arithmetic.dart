@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../model/arithmetic.dart';
+import 'output_screen.dart';
 
 class ArithemticScreen extends StatefulWidget {
   const ArithemticScreen({super.key});
@@ -14,19 +15,21 @@ class _MyAppState extends State<ArithemticScreen> {
   int? first, second;
   int? result = 0;
   Arithmetic? arithmetic;
-  _addNumbers() {
-    arithmetic = Arithmetic(
-      first: first,
-      second: second,
-    );
+  void _addNumbers() {
+    arithmetic = Arithmetic(first: first, second: second);
     setState(() {
       result = arithmetic!.add();
     });
-    // Navigate to another screen and pass the result as an argument
-    // Navigator.pushNamed(context, '/arithmeticOutput', arguments: result);
+    // Navigate to the output screen using the Navigator class
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(
+    //     builder: (context) => ArithmeticOutputScreen(result: result),
+    //   ),
+    // );
   }
 
-  _subtractNumbers() {
+  void _subtractNumbers() {
     setState(() {
       result = first! - second!;
     });
@@ -44,9 +47,7 @@ class _MyAppState extends State<ArithemticScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Arithmetic Operations',
-        ),
+        title: const Text('Arithmetic Operations'),
         centerTitle: true,
       ),
       body: Form(
@@ -78,9 +79,7 @@ class _MyAppState extends State<ArithemticScreen> {
                     }
                   },
                 ),
-                const SizedBox(
-                  height: 8,
-                ),
+                const SizedBox(height: 8),
                 TextFormField(
                   key: const ValueKey('txtSecond'),
                   keyboardType: TextInputType.number,
@@ -103,9 +102,7 @@ class _MyAppState extends State<ArithemticScreen> {
                     }
                   },
                 ),
-                const SizedBox(
-                  height: 8,
-                ),
+                const SizedBox(height: 8),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -118,9 +115,7 @@ class _MyAppState extends State<ArithemticScreen> {
                     child: const Text('Add'),
                   ),
                 ),
-                const SizedBox(
-                  height: 8,
-                ),
+                const SizedBox(height: 8),
                 SizedBox(
                   key: const Key('btnSubtract'),
                   width: double.infinity,
@@ -128,20 +123,15 @@ class _MyAppState extends State<ArithemticScreen> {
                     onPressed: () {
                       if (_formGlobalKey.currentState!.validate()) {
                         _subtractNumbers();
-                        //Navigator.pushNamed(context, 'arithmeticOutput');
                       }
                     },
                     child: const Text('Subtract'),
                   ),
                 ),
-                const SizedBox(
-                  height: 8,
-                ),
+                const SizedBox(height: 8),
                 Container(
                   height: 40,
-                  decoration: const BoxDecoration(
-                    color: Colors.yellow,
-                  ),
+                  decoration: const BoxDecoration(color: Colors.yellow),
                   child: Center(
                     child: Text(
                       'Result : $result',
